@@ -6,7 +6,7 @@
 using namespace std;
 string longestPalindrome(string s) {
     int maxlen = 0;
-    int lmax, rmax;
+    int lmax = 0, rmax = 0;
     int n = s.size();
     for (int i = 0; i < n; i++) {
         int curlen = 1;

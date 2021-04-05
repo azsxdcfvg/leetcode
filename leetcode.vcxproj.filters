@@ -23,5 +23,8 @@
     <ClInclude Include="5最长回文子串.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="6Z字形变换.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
