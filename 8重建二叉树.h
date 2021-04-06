@@ -9,45 +9,6 @@ struct TreeNode {
 	TreeNode* right = NULL;
 };
 
-
-void BFS(TreeNode* root);
-void buildChild(vector<int>& preorder, vector<int>& inorder, TreeNode* root) {
-	
-	int rootnum = preorder[0];
-	root->val = rootnum;
-	int num = 0;
-	for (vector<int>::iterator i = inorder.begin(); i != inorder.end(); i++) {
-		if (rootnum == *i) {
-			num = i - inorder.begin();
-			break;
-		}
-	}
-	vector<int> prelchild(preorder.begin() + 1, preorder.begin() + num +1);
-	vector<int> prerchild(preorder.begin() + num + 1, preorder.end());
-	vector<int> inlchild(inorder.begin(), inorder.begin()+num);
-	vector<int> inrchild(inorder.begin() + num + 1, inorder.end());
-
-	
-	
-	if (!prelchild.empty()) {
-		root->left = new TreeNode();
-		buildChild(prelchild, inlchild, root->left);
-	}
-	if (!prerchild.empty()) {
-		root->right = new TreeNode();
-		buildChild(prerchild, inrchild, root->right);
-	}
-	
-}
-TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-	if (preorder.empty()) {
-		return NULL;
-	}
-	TreeNode* rroot = new TreeNode();
-	buildChild(preorder, inorder, rroot);
-	return rroot;
-}
-
 //测试正确性
 void BFS(TreeNode* root) {
 	queue<TreeNode*> trees;
@@ -64,3 +25,38 @@ void BFS(TreeNode* root) {
 		trees.pop();
 	}
 }
+
+void buildChild(vector<int>::iterator prestart, vector<int>::iterator preend, vector<int>::iterator instart, vector<int>::iterator inend, TreeNode* root) {
+	root->val = *prestart;
+	int num = 0;
+	for (vector<int>::iterator i = instart; i != inend; i++) {
+		if (*prestart == *i) {
+			num = i - instart;
+			break;
+		}
+	}
+	//重建STL太过浪费时间,而且占用内存,可以直接传递首尾迭代器
+	//vector<int> prelchild(preorder.begin() + 1, preorder.begin() + num +1);
+	//vector<int> prerchild(preorder.begin() + num + 1, preorder.end());
+	//vector<int> inlchild(inorder.begin(), inorder.begin()+num);
+	//vector<int> inrchild(inorder.begin() + num + 1, inorder.end());
+
+	if (num!=0) {
+		root->left = new TreeNode();
+		buildChild(prestart + 1, prestart + num + 1, instart, instart + num, root->left);
+	}
+	if (prestart + num + 1 != preend) {
+		root->right = new TreeNode();
+		buildChild(prestart + num + 1, preend, instart + num + 1, inend, root->right);
+	}
+	
+}
+TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+	if (preorder.empty()) {
+		return NULL;
+	}
+	TreeNode* rroot = new TreeNode();
+	buildChild(preorder.begin(),preorder.end(),inorder.begin(), inorder.end(), rroot);
+	return rroot;
+}
+
