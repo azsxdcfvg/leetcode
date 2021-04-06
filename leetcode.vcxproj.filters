@@ -26,5 +26,8 @@
     <ClInclude Include="6Z字形变换.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="7整数反转.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
