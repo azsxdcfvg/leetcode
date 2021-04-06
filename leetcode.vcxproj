@@ -145,6 +145,7 @@
     <ClInclude Include="5最长回文子串.h" />
     <ClInclude Include="6Z字形变换.h" />
     <ClInclude Include="7整数反转.h" />
+    <ClInclude Include="8重建二叉树.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
