@@ -142,6 +142,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="10-1斐波那契数.h" />
+    <ClInclude Include="12矩阵中的路径.h" />
     <ClInclude Include="5最长回文子串.h" />
     <ClInclude Include="6Z字形变换.h" />
     <ClInclude Include="7整数反转.h" />

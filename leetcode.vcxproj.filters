@@ -32,5 +32,11 @@
     <ClInclude Include="8重建二叉树.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="10-1斐波那契数.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="12矩阵中的路径.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

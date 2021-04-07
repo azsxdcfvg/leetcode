@@ -2,11 +2,11 @@
 #include"6Z字形变换.h"
 #include"7整数反转.h"
 #include"8重建二叉树.h"
+#include"10-1斐波那契数.h"
+#include"12矩阵中的路径.h"
 using namespace std;
 int main() {
-    TreeNode* root;
-    vector<int> preorder = { 3,9,20,15,7 };
-    vector<int> inorder = { 9,3,15,20,7 };
-    root = buildTree(preorder, inorder);
-    BFS(root);
+    string word = "AAB";
+    vector<vector<char>> board{ {'C', 'A', 'A'},{'A', 'A', 'A' }, {'B', 'C', 'D'} };
+    cout << exist(board, word) << endl;;
 }
