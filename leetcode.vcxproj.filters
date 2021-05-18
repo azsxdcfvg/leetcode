@@ -29,5 +29,8 @@
     <ClInclude Include="合并两个有序链表.h">
       <Filter>头文件\链表类题目</Filter>
     </ClInclude>
+    <ClInclude Include="K个升序链表合并.h">
+      <Filter>头文件\链表类题目</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
