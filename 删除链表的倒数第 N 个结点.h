@@ -11,9 +11,12 @@ leetcode 网址:https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 # 1 <= n <= sz
 
 测试用例
-ListNode *tail = new ListNode(3);
-ListNode *mid = new ListNode(2, tail);
-ListNode *head = new ListNode(1, mid);
+ListNode* tail = new ListNode(3);
+ListNode* mid = new ListNode(2, tail);
+ListNode* head = new ListNode(1, mid);
+output(head);
+//output(removeNthFromEnd_my_brute(head, 3));
+output(removeNthFromEnd_standard(head, 3));
 
 ++++++++++++++++++++++++++++++++++++++
 1.对于倒数这样的情况,考虑栈;
